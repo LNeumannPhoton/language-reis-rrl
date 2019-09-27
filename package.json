@@ -1,0 +1,25 @@
+{
+    "name": "language-reis-rrl",
+    "displayName": "Reis Robot Language",
+    "description": "Provides language support for Reis RSV-IPC programming language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.38.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "rrl",
+            "aliases": ["Reis Robot Language", "rrl"],
+            "extensions": [".SRC"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "rrl",
+            "scopeName": "source.rrl",
+            "path": "./syntaxes/rrl.tmLanguage.json"
+        }]
+    }
+}

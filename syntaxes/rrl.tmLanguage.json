@@ -1,0 +1,155 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Reis Robot Language",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#move-functions"
+		},
+		{
+			"include": "#var-functions"
+		},
+		{
+			"include": "#control"
+		},
+		{
+			"include": "#spec-functions"
+		},
+		{
+			"include": "#log-functions"
+		},
+		{
+			"include": "#pos-functions"
+		},
+		{
+			"include": "#peri-functions"
+		},
+		{
+			"include": "#prog-functions"
+		},
+		{
+			"include": "#plc-functions"
+		},
+		{
+			"include": "#math-functions"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.rrl",
+				"match": "^(SPR|MPR|SRC|MAC|PLC|DIR|BCK|END|TREE_COPY|DEL_TREE|TECH_WKOR|TECH_SSCHW|PRG_UMBENENN|LOE_MARK_PRG|SUCH&ESETZ|AX_CALIB|LADE_TFTP|SET_IP|MAKRO)\\s"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.rrl",
+			"begin": "\"",
+			"end": "\""
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.rrl",
+					"match": "(^C\\s.*$)"
+				},
+				{
+					"name": "punctuation.definition.tag.rrl",
+					"match": "^\\\\.*$"
+				}
+			]
+		},
+		"move-functions": {
+			"patterns": [
+				{
+					"name": "constant.language.move.rrl",
+					"match": "^(BEWEG_ART|PTP_GESCHW|PTP_BESCHL|BAHN_GESCHW|BAHN_BESCHL|UEBERSCHL|WERKZEUG|BAHN_RADIUS|BAHN_DISTANZ|BAHN_ZEIT|BAHN_SCHALT|ACHSE|RELATIV|BERECH_REL|IST_POS|VAR_POS|RELATIV_TOOL|VERLAENG|MIN_WEG|EXT_WERKZEUG|OPTIMIZE|LAST|OPTI_ACHSEN|OPTIMIZE_CP|IPO_MODUS|HGP_GESCHW|HGP_BESCHL|TRAFO_POS|EXTERN_FAHREN|WERKZEUG_KORR|ORI_RADIUS|ORI_GESCHW|ORI_BESCHL)\\s"
+				}
+			]
+		},
+		"var-functions": {
+			"patterns": [
+				{
+					"name": "support.function.var.rrl",
+					"match": "^(KOPIERE|TESTE_VARSTAT|KONST|LOK_KONST|LOK_VAR|VAR|SCHREIBE_LASTVAR)\\s"
+				}
+			]
+		},
+		"control": {
+			"patterns": [
+				{
+					"name": "keyword.control.rrl",
+					"match": "^(WARTE_BIT|TESTE_BIT|TESTE|WARTEZEIT|SPRUNG|MARKE|VARLIST|VORLAUF_SYNC|WARTE_AUF|RUECKSPRUNG_MARKE|AUSGABE|EINGABE|WARTE_BITMUSTER)\\s"
+				}
+			]
+		},
+		"peri-functions": {
+			"patterns": [
+				{
+					"name": "support.function.peripherals.rrl",
+					"match": "^(ANA_AUSG|ANA_EING|XPOS|TELNET_CMD|SEND_TELE|SEND_MAIL|RECV_MAIL|SEND_SMS|RECV_SMS|EXT_DEVICE)\\s"
+				}
+			]
+		},
+		"plc-symbols": {
+			"patterns": [
+				{
+					"name": "support.function.plc.rrl",
+					"match": ""
+				}
+			]
+		},
+		"pos-functions": {
+			"patterns": [
+				{
+					"name": "support.function.position.rrl",
+					"match": "^(POSITION)\\s"
+				}
+			]
+		},
+		"math-functions": {
+			"patterns": [
+				{
+					"name": "support.function.math.rrl",
+					"match": "^(ADD|SUB|MUL|DIV|MODULO|NEG|VEK_ADD|VEK_SUB|VEK_LAENGE|VEK_BETRAG|BETRAG|TRIG_FUNK|WURZEL|SCHNITTPKT|MITTELPKT|TYP_KONV)\\s"
+				},
+				{
+					"name": "entity.other.attribute-name.rrl",
+					"match": "^F.*$"
+				}
+			]
+		},
+		"log-functions": {
+			"patterns": [
+				{
+					"name": "support.function.logic.rrl",
+					"match": "^(SCHR_BIT|INVERT|SCHIEBE_R|SCHIEBE_L|ODER|UND|EXKL_ODER|SCHR_BITMUSTER)\\s"
+				}
+			]
+		},
+		"spec-functions": {
+			"patterns": [
+				{
+					"name": "keyword.control.special.rrl",
+					"match": "^(SUCHE_BIN|PROC_CTRL|TRAFO_6D|STOP|C|PENDELN|P_WINKEL|SENSOR|TECHIPO|LIBO_SENSOR|PALETTE|MS_TRAFO_EIN|MS_TRAFO_AUS|KALIBRIEREN|MAUS_KALIB|WURZELLAGE|DECKLAGE|SCHWEISSEN|IMPULS|INDEX|BREMSENTEST|LAST_IDENT|KOLL_DETEKT|KOPIERE_STR|VERGLEICHE_STR|SUCHE_STR|LAENGE_STR|STR_NUM|NUM_STR|SCHREIBE_SATZ|LOESCHE_SATZ|HOLE_STATUS|SETZE_STATUS|SYSTEM_TEST|INIT_SERIAL|ERZEUGE_LGB|EINTRAG_LGB|CNC|MS_KOMMANDO|MS_KOPPLUNG|MS_SYNC|HOLE_POS|SCHREIBE_POS|BERECHNE_FRAME|HOLE_SATZINFO|KOPIERE_SATZ|VAR_AUFZEICHNUNG|MELDUNG|MENUE|LESE_TASTE|SIMU_TASTE|TAV_CNTRL|TEACH_KORR|SUCHE_MARK|MARKIERUNG|HOLE_SATZ|BLOCK_EXPORT|BLOCK_IMPORT|TRENNE_PFAD|ERZEUGE_PFAD|CALL_CFUNC|SYSTEM_FKT|REIBUNG_IDENT|SCHREIBE_DATEN|X|BDO_ZUFUEGEN|BDO_ANZEIGEN|BDO_LOESCHEN|BDO_EIGENSCHAFTEN|XIRP_CMD|XIRP_INIT|VR_OBJEKT|XML_ANALYSE)(\\s)"
+				}
+			]
+		},
+		"prog-functions": {
+			"patterns": [
+				{
+					"name": "support.function.logic.rrl",
+					"match": "^(PROGRAMM|U_PROG|WAEHLE_PROG|KOPIERE_PROG|LOESCHE_PROG|TESTE_PROG|ERZEUGE_PROG|LADE_FTP|SENDE_FTP|BENENNE_PROG|PARALLEL_TASK)\\s"
+				}
+			]
+		}
+	},
+	"scopeName": "source.rrl"
+}
