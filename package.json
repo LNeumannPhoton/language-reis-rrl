@@ -1,6 +1,7 @@
 {
     "name": "language-reis-rrl",
     "displayName": "Reis Robot Language",
+    "publisher": "lukasN",
     "description": "Provides language support for Reis RSV-IPC programming language",
     "version": "0.0.1",
     "engines": {
