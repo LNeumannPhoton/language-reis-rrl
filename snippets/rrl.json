@@ -1,0 +1,43 @@
+{
+    "KOPIERE": {
+        "prefix": "KOPIERE",
+        "body": [
+            "KOPIERE Quelle:$1,Ziel_Var:$2"
+        ],
+        "description": "Code snippet für eine Kopieranweisung"
+    },
+    "MARKE/SPRUNG": {
+        "prefix": "MARKE",
+        "body": [
+            "MARKE \"${1}\"",
+            "$2",
+            "SPRUNG Marke:\"${1}\""
+        ],
+        "description": "Code snippet für eine Marke mit Sprunganweisung"
+    },
+    "Unterprogramm": {
+        "prefix": "U_PROG",
+        "body": [
+            "U_PROG Name:\"${1}\""
+        ],
+        "description": "Code snippet für den Sprung in ein Unterprogramm"
+    },
+    "TESTE": {
+        "prefix": "TESTE",
+        "body": [
+            "TESTE #${1|VARIABLE,EINGANG,AUSGANG,MERKER|},Op_1:$2,#${3|=,<>,<,>,<=,>=|},${4|Op_2,Byte|}:$5,Marke:$6"
+        ]
+    },
+    "FOR LOOP":{
+        "prefix": "for",
+        "body": [
+            "MARKE \"${1}\"",
+            "VAR Name:I${2}",
+            "$4",
+
+            "ADD Op_1:1,Ziel_Var:I${2}",
+            "TESTE #VARIABLE,Op_1:${2},#<,Op_2:${3},Marke:\"${1}\""
+        ]
+    }
+    
+}
