@@ -40,6 +40,15 @@
 		},
 		{
 			"include": "#math-functions"
+		},
+		{
+			"include": "#function-keywords"
+		},
+		{
+			"include": "#number-literal"
+		},
+		{
+			"include": "class-member"
 		}
 	],
 	"repository": {
@@ -70,7 +79,7 @@
 			"patterns": [
 				{
 					"name": "constant.language.move.rrl",
-					"match": "^(BEWEG_ART|PTP_GESCHW|PTP_BESCHL|BAHN_GESCHW|BAHN_BESCHL|UEBERSCHL|WERKZEUG|BAHN_RADIUS|BAHN_DISTANZ|BAHN_ZEIT|BAHN_SCHALT|ACHSE|RELATIV|BERECH_REL|IST_POS|VAR_POS|RELATIV_TOOL|VERLAENG|MIN_WEG|EXT_WERKZEUG|OPTIMIZE|LAST|OPTI_ACHSEN|OPTIMIZE_CP|IPO_MODUS|HGP_GESCHW|HGP_BESCHL|TRAFO_POS|EXTERN_FAHREN|WERKZEUG_KORR|ORI_RADIUS|ORI_GESCHW|ORI_BESCHL)\\s"
+					"match": "(BEWEG_ART|PTP_GESCHW|PTP_BESCHL|BAHN_GESCHW|BAHN_BESCHL|UEBERSCHL|WERKZEUG|BAHN_RADIUS|BAHN_DISTANZ|BAHN_ZEIT|BAHN_SCHALT|ACHSE|RELATIV|BERECH_REL|IST_POS|VAR_POS|RELATIV_TOOL|VERLAENG|MIN_WEG|EXT_WERKZEUG|OPTIMIZE|LAST|OPTI_ACHSEN|OPTIMIZE_CP|IPO_MODUS|HGP_GESCHW|HGP_BESCHL|TRAFO_POS|EXTERN_FAHREN|WERKZEUG_KORR|ORI_RADIUS|ORI_GESCHW|ORI_BESCHL)\\s"
 				}
 			]
 		},
@@ -79,6 +88,15 @@
 				{
 					"name": "support.function.var.rrl",
 					"match": "^(KOPIERE|TESTE_VARSTAT|KONST|LOK_KONST|LOK_VAR|VAR|SCHREIBE_LASTVAR)\\s"
+				}
+			]
+		},
+		"function-keywords" : {
+			"patterns": [
+				{"include": "strings"},
+				{
+					"name": "support.variable.keyword",
+					"match": "(Ziel_Var|Quelle|(Op_[0-9])|Pegel|Byte|Bit_Nr|Marke|Text|#[a-zA-Z0-9_]+|Name)"
 				}
 			]
 		},
@@ -147,6 +165,22 @@
 				{
 					"name": "support.function.logic.rrl",
 					"match": "^(PROGRAMM|U_PROG|WAEHLE_PROG|KOPIERE_PROG|LOESCHE_PROG|TESTE_PROG|ERZEUGE_PROG|LADE_FTP|SENDE_FTP|BENENNE_PROG|PARALLEL_TASK)\\s"
+				}
+			]
+		},
+		"number-literal": {
+			"patterns": [
+				{
+					"name": "constant.numeric.rrl",
+					"match": "((?<![a-zA-Z_0-9])(\\d+(\\.\\d+)?))"
+				}
+			]
+		},
+		"class-member": {
+			"patterns": [
+				{
+					"name": "keyword.constant.rrl",
+					"match": "(?<=[a-zA-Z_0-9]\\.).-.([a-zA-Z]*)"
 				}
 			]
 		}
