@@ -21,6 +21,12 @@
             "language": "rrl",
             "scopeName": "source.rrl",
             "path": "./syntaxes/rrl.tmLanguage.json"
-        }]
+        }],
+        "snippets": [
+            {
+                "language": "rrl",
+                "path": "./snippets/rrl.json"
+            }
+        ]
     }
 }
