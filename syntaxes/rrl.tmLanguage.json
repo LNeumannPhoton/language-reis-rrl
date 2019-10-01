@@ -96,7 +96,7 @@
 				{"include": "strings"},
 				{
 					"name": "support.variable.keyword",
-					"match": "(Ziel_Var|Quelle|(Op_[0-9])|Pegel|Byte|Bit_Nr|Marke|Text|#[a-zA-Z0-9_]+|Name)"
+					"match": "(Ziel_Var|Quelle|(Op_[0-9])|Pegel|Byte|Bit_Nr|Marke|Text|#[a-zA-Z0-9_]+|Name|Variable|Maske)"
 				}
 			]
 		},
